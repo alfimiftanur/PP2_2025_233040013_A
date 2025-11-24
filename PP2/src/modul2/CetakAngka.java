@@ -1,4 +1,4 @@
-package modul1;
+package modul2;
 
 public class CetakAngka {
     public static void main(String[] args) {

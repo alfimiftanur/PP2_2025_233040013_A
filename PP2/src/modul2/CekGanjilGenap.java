@@ -1,4 +1,4 @@
-package modul1;
+package modul2;
 
 public class CekGanjilGenap {
     public static void main(String[] args) {
