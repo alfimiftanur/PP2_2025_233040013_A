@@ -35,15 +35,15 @@ public class TugasManajemenNilaiSiswaApp extends JFrame {
         panel.add(new JLabel(" "));
         panel.add(btnSimpan);
 
-        JButton btnReset = new JButton("Reset");
-        panel.add(btnReset);
-
         btnSimpan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 prosesSimpan();
             }
         });
+
+        JButton btnReset = new JButton("Reset");
+        panel.add(btnReset);
 
         btnReset.addActionListener(e -> {
             txtNama.setText("");
@@ -55,15 +55,15 @@ public class TugasManajemenNilaiSiswaApp extends JFrame {
     private JPanel createTabPanel(){
         JPanel panel = new JPanel(new BorderLayout());
 
-        JButton btnHapus = new JButton("Hapus Data");
-        panel.add(btnHapus, BorderLayout.SOUTH);
-
         String[] kolom = {"Nama Siswa", "Mata Pelajaran", "Nilai", "Grade"};
         tableModel = new DefaultTableModel(kolom, 0);
         tableData = new JTable(tableModel);
 
         JScrollPane scrollPane =  new JScrollPane(tableData);
         panel.add(scrollPane, BorderLayout.CENTER);
+
+        JButton btnHapus = new JButton("Hapus Data");
+        panel.add(btnHapus, BorderLayout.SOUTH);
 
         btnHapus.addActionListener(e -> {
             int index = tableData.getSelectedRow();
